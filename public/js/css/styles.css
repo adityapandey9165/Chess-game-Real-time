@@ -1,0 +1,130 @@
+/* styles.css */
+
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+/* Chessboard styles */
+.chessboard {
+  display: grid;
+  grid-template-columns: repeat(8, 3rem); /* Adjust width of squares */
+  grid-template-rows: repeat(8, 3rem); /* Adjust height of squares */
+  width: 24rem;
+  height: 24rem;
+  border: 4px solid #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Square styles */
+.square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0d9b5; /* Light square color */
+  transition: background-color 0.3s;
+}
+
+.square.dark {
+  background-color: #b58863; /* Dark square color */
+}
+
+.square:hover {
+  background-color: #e0c79b; /* Hover color */
+}
+
+/* Piece styles */
+.piece {
+  font-size: 2rem;
+  line-height: 3rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.piece.white {
+  color: #fff;
+}
+
+.piece.black {
+  color: #000;
+}
+
+.piece:hover {
+  transform: scale(1.1);
+}
+
+/* Captured pieces styles */
+.captured-pieces {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.captured-pieces .piece {
+  font-size: 1.5rem;
+  margin: 0 0.5rem; /* Adjust spacing between captured pieces */
+}
+
+/* Status styles */
+.status {
+  color: #333;
+  font-size: 1.25rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Player name input styles */
+.player-name-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.player-name-input label {
+  color: #333;
+}
+
+.player-name-input input {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #333;
+  margin-right: 0.5rem; /* Adjust spacing */
+}
+
+.player-name-input button {
+  padding: 0.5rem 1rem;
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.player-name-input button:hover {
+  background-color: #2563eb;
+}
+
+/* Add this style to flip the chessboard */
+.flipped .chessboard {
+  transform: rotate(180deg);
+}
+
+/* Add this style to flip the pieces */
+.flipped .piece {
+  transform: rotate(180deg);
+}
+
+/* Ensure pieces are visible on dark squares */
+.dark .piece {
+  color: #fff;
+}
